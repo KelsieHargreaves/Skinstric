@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -23,4 +24,27 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roobert', sans-serif;
+  color: #1A1B1C;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('/fonts/Roobert/RoobertTRIAL-Regular-BF67243fd53fdf2.otf');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roobert';
+  src: url('/fonts/Roobert/RoobertTRIAL-Bold-BF67243fd540abb.otf');
+  font-weight: 700;
+  font-style: normal;
 }

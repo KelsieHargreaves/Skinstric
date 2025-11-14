@@ -1,0 +1,70 @@
+h1 {
+    font-size: 750px;
+}
+
+.landingContainer {
+    margin-top: 100px;
+    height: 100%;
+}
+
+.landingMain {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title {
+    font-size: 128px;
+    text-align: center;
+}
+
+.landingRight, .landingLeft{
+    position: relative;
+}
+
+.option{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    top: 50%;                   
+    transform: translate(-50%, -50%);  
+    font-size: 14px;
+}
+
+.leftOption{
+    left: 30%;
+
+}
+
+.rightOption{
+    left: 80%;
+    width: 150px;
+}
+
+.rectangle{
+    object-fit: cover;
+}
+
+
+
+.arrowIcon{
+    width: 44px;
+    height: 44px;
+}
+
+.rightArrow{
+    transform: rotate(180deg);
+}
+
+.landingBottom{
+    margin-top: 50px;
+    width: 100%;
+}
+
+.landingPara{
+    text-align: left;
+    width: 400px;
+    padding-left: 52px;
+    font-size: 14px;
+}
