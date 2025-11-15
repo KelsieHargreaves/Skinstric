@@ -15,6 +15,7 @@ h1 {
 .title {
     font-size: 128px;
     text-align: center;
+    transition: transform 1s ease, text-align 300ms ease;
 }
 
 .landingRight, .landingLeft{
@@ -29,11 +30,16 @@ h1 {
     top: 50%;                   
     transform: translate(-50%, -50%);  
     font-size: 14px;
+    cursor: pointer;
+}
+
+.leftOption, .rightOption, .rectangle {
+    transition: opacity 1s ease;
 }
 
 .leftOption{
     left: 30%;
-
+    
 }
 
 .rightOption{
@@ -41,11 +47,30 @@ h1 {
     width: 150px;
 }
 
-.rectangle{
-    object-fit: cover;
+.landingMain:has(.landingRight:hover)  .title {
+  transform: translateX(-20%);
+  text-align: left;
+}
+
+.landingMain:has(.landingRight:hover) .landingLeft .leftOption,
+.landingMain:has(.landingRight:hover) .landingLeft .rectangle {
+  opacity: 0;
+}
+
+.landingMain:has(.landingLeft:hover) .title {
+  transform: translateX(20%);
+  text-align: right;
+}
+
+.landingMain:has(.landingLeft:hover) .landingRight .rightOption,
+.landingMain:has(.landingLeft:hover) .landingRight .rectangle {
+  opacity: 0;
 }
 
 
+.rectangle{
+    object-fit: cover;
+}
 
 .arrowIcon{
     width: 44px;

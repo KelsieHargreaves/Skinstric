@@ -1,6 +1,8 @@
 import React from "react";
 import landingPageStyles from "./landingPage.css";
 import Header from "../../components/header/header";
+import Link from "next/link";
+import test from "../Test/page";
 
 const LandingPage = () => {
   return (
@@ -13,16 +15,16 @@ const LandingPage = () => {
               <img className="arrowIcon" src="/button-icon-shrunk.png" />
               Discover A.I.
             </button>
-            <img className="rectangle" src="/RectangleLeft.png" />
+            <img className="rectangle leftRectangle" src="/RectangleLeft.png" />
           </div>
           <div className="landingMiddle">
             <h1 className="title">Sophisticated skincare</h1>
           </div>
           <div className="landingRight">
-            <img className="rectangle" src="/RectangleRight.png" />
-            <button className="option rightOption uppercase">Take Test
+            <img className="rectangle rightRectangle" src="/RectangleRight.png" />
+            <Link href='/Test' className="option rightOption uppercase">Take Test
               <img className="arrowIcon rightArrow" src="/button-icon-shrunk.png" />
-            </button>
+            </Link>
           </div>
         </div>
         <div className="landingBottom">

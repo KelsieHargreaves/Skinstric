@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div id='header'>
         <p>SKINSTRIC</p>
-        <p><span className='gray'>[ INTRO ]</span></p>
+        <p className='uppercase'><span className='gray'>&#123; Intro &#125;</span></p>
       
     </div>
   )
