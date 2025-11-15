@@ -4,13 +4,12 @@ import Header from "@/components/header/header";
 import Link from "next/link";
 import React, { useRef, useState } from "react";
 import resultsStyle from "./results.css";
-import { useRouter } from 'next/navigation'
+import { useRouter } from "next/navigation";
 
 const Results = () => {
   const [loading, setLoading] = useState(false);
 
-
-  const router = useRouter()
+  const router = useRouter();
   const fileInputRef = useRef(null);
 
   const handleClick = () => {
@@ -27,19 +26,34 @@ const Results = () => {
     setLoading(true);
 
     try {
-      const formData = new FormData();
-      formData.append("file", file);
+      const toBase64 = (file) =>
+        new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.readAsDataURL(file);
+          reader.onload = () => resolve(reader.result.split(",")[1]);
+          reader.onerror = (error) => reject(error);
+        });
+
+      const base64String = await toBase64(file);
+
+      const payload = {
+        image: base64String,
+      };
 
       const res = await fetch(
         "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",
         {
           method: "POST",
-          body: formData,
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
         }
       );
       const data = await res.json();
+      localStorage.setItem("analysisResults", JSON.stringify(data));
       alert("Image analyzed successfully");
-      router.push("/AI.Analysis"); 
+      router.push("/AI.Analysis");
       console.log("API response:", data);
     } catch (error) {
       console.error("Upload error:", error);
@@ -50,7 +64,7 @@ const Results = () => {
 
   return (
     <div id="results">
-      <Header section="Intro"/>
+      <Header section="Intro" />
       <div className="resultsContainer">
         <p className="resultsTitle uppercase">To start analysis</p>
         {!loading ? (
