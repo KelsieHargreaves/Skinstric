@@ -63,7 +63,7 @@ const Test = () => {
 
   return (
     <div id="testPage">
-      <Header />
+      <Header section="Intro"/>
       <div className="testContainer">
         <p className="testTitle uppercase">To Start Analysis</p>
         <div className="testMiddle">
@@ -107,8 +107,7 @@ const Test = () => {
             <Link href="/Results" className="startButton uppercase">
               Proceed
               <img
-                className="arrowIcon"
-                style={{ rotate: "180deg" }}
+                className="arrowIcon arrowFlipped"
                 src="/button-icon-shrunk.png"
               />
             </Link>

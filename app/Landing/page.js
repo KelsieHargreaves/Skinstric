@@ -7,7 +7,7 @@ import test from "../Test/page";
 const LandingPage = () => {
   return (
     <div id="landingPage">
-      <Header />
+      <Header section="Intro" />
       <div className="landingContainer">
         <div className="landingMain">
           <div className="landingLeft">
@@ -23,7 +23,7 @@ const LandingPage = () => {
           <div className="landingRight">
             <img className="rectangle rightRectangle" src="/RectangleRight.png" />
             <Link href='/Test' className="option rightOption uppercase">Take Test
-              <img className="arrowIcon rightArrow" src="/button-icon-shrunk.png" />
+              <img className="arrowIcon arrowFlipped" src="/button-icon-shrunk.png" />
             </Link>
           </div>
         </div>

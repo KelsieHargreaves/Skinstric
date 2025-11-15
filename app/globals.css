@@ -56,3 +56,7 @@ body {
     align-items: center;
     font-size: 14px;
 }
+
+.arrowFlipped{
+  rotate: 180deg;
+}

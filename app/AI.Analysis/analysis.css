@@ -1,0 +1,91 @@
+.analysisContainer{
+    margin: 0px 32px 20px 32px;
+    height: calc(100vh - 85px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.analysisMiddle{
+    display: flex;
+    justify-content: center;
+}
+
+.diamondWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 700px;
+    height: 700px;
+}
+
+.analysisRombuses{
+    width: 100%;
+}
+
+
+.title{
+    font-weight: 700;
+}
+
+.analysisTop p{
+    font-size: 14px;
+}
+
+.analysisBottom{
+    display: flex;
+    justify-content: space-between;
+}
+
+.diamond {
+  position: absolute;
+  width: 20%;     
+  height: 20%;
+  background: #F4F4F4;
+  transform: rotate(45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  
+}
+
+.diamond span {
+  transform: rotate(-45deg);
+}
+
+.diamondTop {
+  top: 25%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  cursor: pointer;
+  background-color: #ebe6e7;
+}
+
+.diamondLeft {
+  left: 25%;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  cursor: no-drop;
+}
+
+.diamondRight {
+  right: 25%;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  cursor: no-drop;
+}
+
+.diamondBottom {
+  bottom: 25%;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  cursor: no-drop;
+}
+
+.diamond:hover {
+    background-color: #858585;
+}

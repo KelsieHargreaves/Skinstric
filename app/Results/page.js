@@ -1,25 +1,89 @@
-import Header from '@/components/header/header'
-import Link from 'next/link'
-import React from 'react'
-import resultsStyle from './results.css'
+"use client";
+
+import Header from "@/components/header/header";
+import Link from "next/link";
+import React, { useRef, useState } from "react";
+import resultsStyle from "./results.css";
+import { useRouter } from 'next/navigation'
 
 const Results = () => {
+  const [loading, setLoading] = useState(false);
+
+
+  const router = useRouter()
+  const fileInputRef = useRef(null);
+
+  const handleClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = async (event) => {
+    const file = event.target.files[0];
+    if (!file) {
+      alert("Please upload an Image");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const res = await fetch(
+        "https://us-central1-api-skinstric-ai.cloudfunctions.net/skinstricPhaseTwo",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+      const data = await res.json();
+      alert("Image analyzed successfully");
+      router.push("/AI.Analysis"); 
+      console.log("API response:", data);
+    } catch (error) {
+      console.error("Upload error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <div id='results'>
-      <Header />
+    <div id="results">
+      <Header section="Intro"/>
       <div className="resultsContainer">
-        <p className='resultsTitle uppercase'>To start analysis</p>
-        <div className='resultsMiddle'>
-          <img src='/camera.png'/>
-          <img src='/gallery.png'/>
-        </div>
+        <p className="resultsTitle uppercase">To start analysis</p>
+        {!loading ? (
+          <>
+            <div className="resultsMiddle">
+              <button className="cameraButton">
+                <img src="/camera.png" />
+              </button>
+              <button className="galleryButton" onClick={handleClick}>
+                <img src="/gallery.png" />
+              </button>
+              <input
+                type="file"
+                accept="image/*"
+                ref={fileInputRef}
+                onChange={handleFileChange}
+                className="hidden"
+              />
+            </div>
+          </>
+        ) : (
+          <div className="resultsLoadingState">
+            <img className="rombuses" src="/rombuses.png" />
+            <h3>Preparing Your Analysis</h3>
+          </div>
+        )}
         <Link href="/Test" className="startButton uppercase">
-            <img className="arrowIcon" src="/button-icon-shrunk.png" />
-            Back
-          </Link>
+          <img className="arrowIcon" src="/button-icon-shrunk.png" />
+          Back
+        </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Results
+export default Results;

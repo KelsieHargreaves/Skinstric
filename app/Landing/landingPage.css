@@ -77,10 +77,6 @@ h1 {
     height: 44px;
 }
 
-.rightArrow{
-    transform: rotate(180deg);
-}
-
 .landingBottom{
     margin-top: 50px;
     width: 100%;
