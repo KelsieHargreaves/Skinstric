@@ -92,7 +92,7 @@ const Summary = () => {
           </div>
           <div className="summaryMidCenter">
             <h1 className="resultLabelLarge">
-              {capitalize(selectedOption?.label + " years old" || "")}
+              {capitalize(selectedOption?.label || "")}
             </h1>
             <div className="graph">
               <svg className="progressRing" width="400" height="400">

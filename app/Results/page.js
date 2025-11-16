@@ -70,9 +70,9 @@ const Results = () => {
         {!loading ? (
           <>
             <div className="resultsMiddle">
-              <button className="cameraButton">
+              <Link href="/camera/capture" className="cameraButton">
                 <img src="/camera.png" />
-              </button>
+              </Link>
               <button className="galleryButton" onClick={handleClick}>
                 <img src="/gallery.png" />
               </button>
