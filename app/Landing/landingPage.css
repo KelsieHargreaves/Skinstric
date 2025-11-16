@@ -88,3 +88,59 @@ h1 {
     padding-left: 52px;
     font-size: 14px;
 }
+
+@media (max-width: 1600px) {
+    .leftOption, .rightOption{
+        left: 50%;
+    }
+
+}
+
+@media (max-width: 1200px) {
+    .title{
+        font-size: 100px;
+    }
+
+    .rectangle{
+        width: 200px;
+    }
+
+    .rightOption, .leftOption{
+        font-size: 12px;
+    }
+
+    .rightOption{
+        left: 70%;
+    }
+
+    .leftOption{
+        left: 40%;
+    }
+
+    .arrowIcon{
+        width: 30px;
+        height: 30px;
+    }
+}
+@media (max-width: 992px) {
+    .title{
+        font-size: 70px;
+    }
+
+    .rightOption{
+        left: 80%;
+    }
+
+    .leftOption{
+        left: 35%;
+    }
+
+    .arrowIcon{
+        width: 20px;
+        height: 20px;
+    }
+
+    .landingPara{
+        font-size: 10px;
+    }
+}
