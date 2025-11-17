@@ -80,7 +80,7 @@ const Test = () => {
             ) : (
               <>
                 <p className="uppercase">
-                  <span className="gray">Click to type</span>
+                  <span className="gray clickToType">Click to type</span>
                 </p>
                 <input
                   className="nameInput"

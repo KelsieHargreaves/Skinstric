@@ -148,6 +148,7 @@
 .summaryBottom{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .listExplanation.active{
@@ -168,4 +169,163 @@
 
 .listExplanation.active:hover .diamondRadio {
     background-color: white;
+}
+
+@media (max-width: 1200px) {
+    .summaryTop h1{
+        font-size: 50px;
+    }
+
+    .button {
+        width: 100px;
+        height: 80px;
+    }
+
+    .button p {
+        font-size: 14px;
+    }
+
+    .ageResult {
+        width: 30px;
+    }
+
+    .summaryMidCenter{
+        width: 400px;
+    }
+
+    .resultLabelLarge{
+        font-size: 32px;
+    }
+
+    .graph{
+        margin-top: 16px;
+    }
+
+    .summaryMidRight{
+        width: 200px;
+    }
+
+    .rightTitle p {
+        font-size: 14px;
+    }
+
+    .resultLabel {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 900px) {
+    .summaryMiddle{
+        flex-direction: column-reverse;
+        gap: 32px;
+        margin-top: 32px;
+        margin-bottom: 50px;
+        align-items: center;
+    }
+
+    .summaryMidLeft{
+        flex-direction: row;
+    }
+
+    .summaryMidCenter{
+        width: 100%;
+        justify-content: space-around;
+        height: auto;
+    }
+
+    .button{
+        padding: 10px 100px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .summaryMidRight {
+        max-height: 150px;
+        overflow-y: auto;
+        width: 400px;
+        padding: 0 16px;
+    }
+
+    .rightTitle p{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 700px){
+    .button{
+        padding: 10px 60px;
+    }
+
+    .summaryMidCenter{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .summaryMiddle{
+        order: 1;
+    }
+
+    .summaryBottom p{
+        font-size: 12px;
+        width: 200px;
+        text-align: center;
+    }
+
+    .summaryBottom .startButton {
+        font-size: 12px;
+        border: 1px solid #1A1B1C;
+        padding: 4px;
+        color: white;
+        background-color: #1A1B1C;
+        border-radius: 5px;
+    }
+
+    .summaryBottom .arrowIcon {
+        display: none;
+    }
+
+    .summaryTop h1{
+        font-size: 24px;
+    }
+
+    .summaryTop p{
+        font-size: 14px;
+    }
+
+    .summaryTop {
+        order: -1;
+    }
+
+    .summaryBottom{
+        order: 0;
+        margin: 12px 0;
+    }
+
+    .summaryBottom p{
+        width: 150px;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .summaryMidRight{
+        width: 250px;
+        margin-bottom: 60px;
+    }
+
+    .button{
+        padding: 4px; 
+    }
+
+    .progressRing {
+    transform: rotate(-90deg) scale(0.6); 
+    }
+
+    .graph { 
+        width: 400px; 
+        height: 400px;
+    }
+    .graphText { 
+        font-size: 30px; 
+    }
 }

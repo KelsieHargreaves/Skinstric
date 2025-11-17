@@ -94,8 +94,9 @@ const Summary = () => {
             <h1 className="resultLabelLarge">
               {capitalize(selectedOption?.label || "")}
             </h1>
+            <div className="graphWrapper">
             <div className="graph">
-              <svg className="progressRing" width="400" height="400">
+              <svg className="progressRing" width="100%" height="100%" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid meet">
                 <circle
                   className="progressRing-bg"
                   cx="200"
@@ -114,6 +115,7 @@ const Summary = () => {
                 />
               </svg>
               <div className="graphText">{percentage}%</div>
+            </div>
             </div>
           </div>
           <div className="summaryMidRight">

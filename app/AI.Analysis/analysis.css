@@ -89,3 +89,101 @@
 .diamond:hover {
     background-color: #858585;
 }
+
+@media (max-width: 700px){
+  .diamond{
+    width: 120px;
+    height: 120px;
+    font-size: 14px;
+  }
+
+  .analysisTop{
+    order: -1;
+  }
+
+  .analysisBottom{
+    order: 0;
+    margin-top: 32px;
+  }
+
+  .analysisMiddle{
+    order: 1;
+  }
+
+  .diamondWrapper{
+    width: 500px;
+    height: 500px;
+  }
+
+  .analysisContainer{
+    justify-content: start;
+  }
+
+  .diamondTop {
+  top: 10%;
+  left: 50%;
+}
+
+.diamondLeft {
+  top: 45%;
+  left: 60%;
+}
+
+.diamondRight {
+  top: 45%;
+  left: 17%;
+}
+
+.diamondBottom {
+  top: 55%;
+  left: 50%;
+}
+}
+
+@media (max-width: 500px) {
+    .analysisBottom .arrowIcon{
+      display: none;
+    }
+
+    .analysisBottom .startButton {
+      border: 1px solid #1a1a2a;
+      background-color: #1a1a2a;
+      color: white;
+      border-radius: 5px;
+      padding: 4px;
+      font-size: 12px;
+    }
+
+    .analysisBottom .startButton:first-of-type {
+      padding: 4px 32px;
+    }
+
+    .analysisBottom{
+      justify-content: center;
+      gap: 32px;
+    }
+
+    .analysisTop p{
+      font-size: 12px;
+    }
+
+    .diamondTop {
+      top: 10%;
+      left: 50%;
+    }
+
+    .diamondLeft {
+      top: 45%;
+      left: 65%;
+    }
+
+    .diamondRight {
+      top: 45%;
+      left: 3%;
+    }
+
+    .diamondBottom {
+      top: 55%;
+      left: 50%;
+    }
+}
